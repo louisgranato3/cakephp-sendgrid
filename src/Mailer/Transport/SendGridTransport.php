@@ -110,16 +110,16 @@ class SendGridTransport extends AbstractTransport
         $this->_reqParams['subject'] = $message->getSubject();
 
         $emailFormat = $message->getEmailFormat();
-        if (!empty($message->getBodyHtml())) {
-            $this->_reqParams['content'][] = (object)[
-                'type' => 'text/html',
-                'value' => trim($message->getBodyHtml()),
-            ];
-        }
         if ($emailFormat == 'both' || $emailFormat == 'text') {
             $this->_reqParams['content'][] = (object)[
                 'type' => 'text/plain',
                 'value' => trim($message->getBodyText()),
+            ];
+        }
+        if (!empty($message->getBodyHtml())) {
+            $this->_reqParams['content'][] = (object)[
+                'type' => 'text/html',
+                'value' => trim($message->getBodyHtml()),
             ];
         }
 
