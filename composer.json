@@ -1,5 +1,5 @@
 {
-    "name": "louisgranato3/cakephp-sendgrid",
+    "name": "sprintcube/cakephp-sendgrid",
     "description": "SendGrid plugin for CakePHP 4 - Send emails using SendGrid API",
     "type": "cakephp-plugin",
     "license": "MIT",
